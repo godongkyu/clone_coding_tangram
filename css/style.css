@@ -467,7 +467,7 @@ section#intro.abs {
 }
 
 section { /*섹션별로 나누어지게 됨(세로 로)*/
-  /* position: relative; */
+  position: relative;
   overflow: hidden;
   /* display: flex;
   justify-content: center;
@@ -707,86 +707,134 @@ section#ourclients .abs .txt p {
 /* -------------------------------------------------------- */
 
 /* --footer area-- */
+#footer .right .sns li:after, #footer .right .sns li:before {
+    border: 1px solid #333;
+}
+
+.sns li:after, .sns li:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    pointer-events: none;
+}
+
 #footer {
-  background: #000000; /*black = #000 = #000000*/
-  color: #ffffff;
+  background: #000000;
+  padding: 150px 0 140px;
+}
+#footer .inner {
+  display: flex;
+  justify-content: space-between;
+}
+#footer .left .logo {
+  width: 238px;
+}
+#footer .left .logo img {
+    width: auto;
+    max-width: 100%;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #666;
+}
+
+#footer .left .adress {
+    margin-top: 40px;
+}
+
+#footer .left .adress li{
   font-size: 14px;
+  font-weight: 500;
 }
-#footer .footer-top {
-  background: #111111;
-  padding: 60px 0 30px;
+
+#footer .left .adress li b {
+  color: #888;
+  margin-right: 10px;
 }
-#footer .container {
-  /* footer-top의 .container와 #footer의 자식요소 .container의 공통 스타일 적용 */
-  width: 1140px;
-  margin: 0 auto;
+
+#footer .left .adress li span {
+  color: #444;
 }
-#footer > .container {
-  padding: 30px 0;
-  text-align: center;
+
+#footer .left .adress li:not(:first-child) {
+  margin-top: 12px;
 }
-#footer .container .row {
+
+#footer .left address {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 60px;
+  color: #bbb;
+  line-height: 2.17;
+}
+
+.sns {
+  display: flex;
+}
+
+.sns li {
+    width: 38px;
+    position: relative;
+}
+
+.sns li:not(:last-child) {
+  margin-right: 12px;
+}
+
+.sns li a img {
+  width: 100%;
+}
+
+#footer .right .common-btns {
+  float: right;
+  margin-top: 30px;
+}
+
+#footer .right .common-btns li {
+  transition: 0.3s;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
-#footer .container .row .column.footer-logo h3 {
-  font-size: 34px;
-  padding: 2px 0 2px 10px;
-  border-left: 4px solid #18d26e;
-  line-height: 1;
-  font-weight: 700; /*bold*/
-  letter-spacing: 3px;
+
+#footer .right .common-btns li.white a {
+  background: #fff;
 }
-#footer .container .row .column h4 {
+
+#footer .right .common-btns li.white span {
   position: relative;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
 }
 
-#footer .container .row .column h4:before,#footer .container .row .column h4:after{
- content: '';
- position: absolute;
- left: 0;
- bottom: 0;
- height: 2px;
-}
-#footer .container .row .column h4:before {
-  right: 0;
-  background: #555555;
-}
-#footer .container .row .column h4:after {
-  width: 60px;
-  background: #18d26e;
+#footer .right .common-btns li.white span,#footer .right .common-btns li.white i {
+    color: #000;
 }
 
-#footer .container .row .column ul li {
-  border-bottom: 1px solid #333333;
-  padding: 10px 0;
+#footer .right .common-btns li  a{
+  padding: 7px 20px;
+  padding-right: 54px;
+  min-height: 40px;
 }
-#footer .container .row .column ul li:nth-child(1) {
-  padding-top: 0;
+
+#footer .right .common-btns li span {
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+    position: relative;
 }
-#footer .container .row .column p {
-  line-height: 26px;
+
+#footer .right .common-btns li span {
+  font-size: 13px;
 }
-#footer .container .row .column.news input[type=text] {
-  border: 0;
-  padding: 6px 8px;
-  width: 65%;
-  box-sizing: border-box;
-}
-#footer .container .row .column.news input[type=submit] {
-  border: 0;
-  padding: 6px 0;
-  width: 35%;
-  background: #18d26e;
-  color: white;
-  cursor: pointer;
-}
+
+
 /* -------------------------------------------------------- */
 /* media query  나중에정리*/
 @media screen and ( max-width: 1700px ){
